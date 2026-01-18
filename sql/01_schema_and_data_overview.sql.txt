@@ -1,0 +1,10 @@
+-- Project: Target Business Case – SQL Analysis
+-- File: Schema and Data Overview
+-- Objective:
+--   Understand database structure, table relationships, data types,
+--   and overall data coverage before performing deep analysis.
+--
+-- Key areas covered:
+--   - Table schemas and data types
+--   - Date range of orders
+--   - Customer geographical spread

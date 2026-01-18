@@ -1,0 +1,8 @@
+-- Objective:
+--   Analyze revenue, order value, and freight cost patterns
+--   to understand economic impact and logistics efficiency.
+--
+-- Business questions:
+--   - How has total order value changed over time?
+--   - Which states contribute most to revenue?
+--   - Are freight costs aligned with revenue patterns?

@@ -1,0 +1,8 @@
+-- Objective:
+--   Analyze customer payment behavior across different
+--   payment types and installment patterns.
+--
+-- Business questions:
+--   - Which payment modes are most popular?
+--   - How do payment trends evolve over time?
+--   - Do customers prefer EMI or full payment?

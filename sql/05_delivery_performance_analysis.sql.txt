@@ -1,0 +1,8 @@
+-- Objective:
+--   Evaluate delivery timelines and performance
+--   by comparing actual vs estimated delivery durations.
+--
+-- Business questions:
+--   - How long do orders take to get delivered?
+--   - Which states have the fastest and slowest deliveries?
+--   - Are delivery estimates accurate?

@@ -1,0 +1,8 @@
+-- Objective:
+--   Understand how e-commerce orders and customers
+--   are distributed across different Brazilian states.
+--
+-- Business questions:
+--   - Which states drive the highest order volume?
+--   - Are there regional growth or saturation patterns?
+--   - Where should business expansion be focused?
