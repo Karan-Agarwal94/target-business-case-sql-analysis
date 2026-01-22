@@ -146,24 +146,15 @@ This project demonstrates intermediate to advanced SQL skills, including:
 → Most customers prefer full payment or short EMIs (1–2 installments)
 
 ## 📁 Repository Structure
-Target-Business-Case-SQL-Analysis/
+
+```text
+target-business-case-sql-analysis/
 │
-├── SQL Queries/
-│   ├── Exploratory_Analysis.sql
-|   ├── Schema_and_data_overview.sql
-│   ├── Orders_time_trend_analysis.sql
-│   ├── Geographical_Analysis.sql
-│   ├── Revenue_And_Freight_Analysis.sql
-│   ├── Delivery_Performance_Analysis.sql
-│   └── Payment_Behavior_Analysis.sql
-│
-├── Data/
-│   └── CSV_Files/
-│
-├── Results/
-│   └── Query_Outputs/
-│
-└── README.md
+├── data/        # Raw CSV datasets used for analysis
+├── sql/         # All SQL scripts (EDA, trends, revenue, logistics, payments)
+├── insights/    # Business insights and written interpretations
+├── visuals/     # Charts or screenshots used for reporting
+└── README.md    # Project documentation
 
 ## How to Use This Project
 
@@ -192,6 +183,9 @@ Target-Business-Case-SQL-Analysis/
 👤 Author
 
 Karan Agarwal
+
 Aspiring Data Analyst / Data Scientist
+
 Skilled in SQL, Python, Data Analysis & Business Problem-Solving
+
 https://www.linkedin.com/in/karan-agarwal-jain94
