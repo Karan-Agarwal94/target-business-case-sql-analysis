@@ -155,6 +155,7 @@ target-business-case-sql-analysis/
 ├── insights/    # Business insights and written interpretations
 ├── visuals/     # Charts or screenshots used for reporting
 └── README.md    # Project documentation
+```
 
 ## How to Use This Project
 
@@ -188,4 +189,4 @@ Aspiring Data Analyst / Data Scientist
 
 Skilled in SQL, Python, Data Analysis & Business Problem-Solving
 
-https://www.linkedin.com/in/karan-agarwal-jain94
+https://www.linkedin.com/in/karan-agarwal-jain94    
