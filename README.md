@@ -24,47 +24,41 @@ The primary goals of this analysis are to:
 
 ### Dataset Information
 
-- Domain: E-commerce (Brazil)
+- **Domain:** E-commerce (Brazil)
 
-- Time Period: September 2016 – October 2018
+- **Time Period:** September 2016 – October 2018
 
-- Orders: ~99,441
+- **Orders:** ~99,441
 
-- Geographic Coverage: 4,119 cities across 27 states
+- **Geographic Coverage:** 4,119 cities across 27 states
 
-- Core Tables Used:
+- **Core Tables Used:**
 
-customers
+  - customers
+  - orders
+  - order_items
+  - payments
+  - products
+  - sellers
 
-orders
-
-order_items
-
-payments
-
-products
-
-sellers
 
 ### Database & Tooling
 
-- Database: MySQL
+- **Database:** MySQL
 
-- Query Style: Modular SQL files
+- **Query Style:** Modular SQL files
 
-- Key Techniques Used:
+- **Key Techniques Used:**
 
-Joins (multi-table)
-
-Window functions
-
-Date & time analysis
-
-Aggregations & grouping
-
-Data validation & sanity checks
+  - Multi-table joins
+  - Window functions
+  - Date & time analysis
+  - Aggregations & grouping
+  - Data validation & sanity checks
 
 ### Repository Structure
+
+```text
 target-business-case-sql-analysis/
 │
 ├── sql/
@@ -87,6 +81,7 @@ target-business-case-sql-analysis/
 ├── data/
 ├── visuals/
 └── README.md
+```
 
 ### Key Insights (Executive Summary)
 
@@ -108,7 +103,7 @@ target-business-case-sql-analysis/
 
 - Remote states incur freight costs exceeding 24–28% of revenue, versus 13–17% in major states.
 
-This highlights a strong logistics cost imbalance across regions.
+- This highlights a strong logistics cost imbalance across regions.
 
 #### Delivery Performance
 
@@ -140,21 +135,21 @@ This highlights a strong logistics cost imbalance across regions.
 
 ### How to Use This Project
 
-↠ Load CSV data into MySQL
+1. Load CSV data into MySQL
 
-↠ Follow execution order from:
+2. Follow execution order from:
+***sql/00_project_execution_guide.sql***
 
-sql/00_project_execution_guide.sql
+3. Run each analysis file sequentially
 
-
-↠ Run each analysis file sequentially
-
-↠ Refer to corresponding insights files for interpretations
+4. Refer to corresponding insights files for interpretations
 
 👤 Author
 
-Karan Agarwal
-Aspiring Data Analyst / Data Scientist
-Skills: SQL, Python, Data Analysis, Business Analytics
+**Karan Agarwal**
 
-https://www.linkedin.com/in/karan-agarwal-jain94    
+Aspiring Data Analyst / Data Scientist  
+
+**Skills:** SQL, Python, Data Analysis, Business Analytics  
+
+🔗 LinkedIn: https://www.linkedin.com/in/karan-agarwal-jain94   
