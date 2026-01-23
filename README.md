@@ -121,7 +121,7 @@ target-business-case-sql-analysis/
 
 - Most customers prefer single or short-term installments, with notable spikes at 8 and 10 EMIs.
 
-📌 Business Recommendations:
+### 📌 Business Recommendations:
 
 ↠ Prioritize logistics efficiency and customer retention in high-revenue states.
 
@@ -144,7 +144,7 @@ target-business-case-sql-analysis/
 
 4. Refer to corresponding insights files for interpretations
 
-👤 Author
+### 👤 Author
 
 **Karan Agarwal**
 
