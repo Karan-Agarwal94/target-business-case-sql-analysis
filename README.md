@@ -1,39 +1,38 @@
 # Target Business Case – SQL Analysis
 
-## Project Overview
+### Project Overview
 
-This project is an end-to-end SQL-driven business analysis of a large Brazilian E-commerce dataset (Target).
+- This project presents an end-to-end SQL-based business analysis of a Brazilian e-commerce platform, covering over 99K orders across 27 states.
 
-The objective is to analyze customer behavior, order trends, revenue movement, logistics performance, and payment patterns using advanced SQL techniques.
+- The objective is not just to analyze data, but to translate SQL insights into meaningful business decisions around growth, logistics, revenue efficiency, and customer payment behavior.
 
-The analysis is designed from a business decision-making perspective, not just query writing, with clear insights and recommendations for each section.
+- All analysis was executed using MySQL, with each analytical theme modularized into separate SQL and insight files.
 
-## Business Objective
-The primary business goals of this analysis are to:
+### Business Objective
 
-↠ Understand order growth trends and seasonality
+The primary goals of this analysis are to:
 
-↠ Identify top-performing and under-penetrated states
+- Understand order growth patterns and seasonality
 
-↠ Analyze revenue, pricing, and freight cost distribution
+- Identify geographical concentration of customers, revenue, and logistics costs
 
-↠ Evaluate delivery performance vs estimated timelines
+- Evaluate delivery performance and reliability
 
-↠ Assess customer payment behavior and preferences
+- Analyze payment method preferences and installment behavior
 
-↠ Provide actionable insights to improve operations, logistics, and customer experience
+- Derive actionable business recommendations backed by data
 
-## Dataset Information
+### Dataset Information
 
-Domain: E-commerce (Brazil)
+- Domain: E-commerce (Brazil)
 
-Time Range: September 2016 – October 2018
+- Time Period: September 2016 – October 2018
 
-Granularity: Order-level, item-level, payment-level
+- Orders: ~99,441
 
-Source: Public Brazilian E-commerce dataset
+- Geographic Coverage: 4,119 cities across 27 states
 
-Key Tables Used:
+- Core Tables Used:
 
 customers
 
@@ -43,150 +42,119 @@ order_items
 
 payments
 
-geolocation
+products
 
-## Database Schema
+sellers
 
-The relational schema follows a normalized structure:
+### Database & Tooling
 
-customers → customer details & location
+- Database: MySQL
 
-orders → order lifecycle timestamps & status
+- Query Style: Modular SQL files
 
-order_items → product price & freight values
+- Key Techniques Used:
 
-payments → payment type, installments & value
+Joins (multi-table)
 
-geolocation → mapping ZIP codes to states
+Window functions
 
-Primary and foreign keys are used to enable multi-table joins and business aggregations.
+Date & time analysis
 
-## Business Questions Addressed
+Aggregations & grouping
 
-### 1️⃣ Exploratory Analysis
+Data validation & sanity checks
 
-↠  What is the structure and data type of each table?
-
-↠ What is the overall time range of the orders?
-
-↠ How many cities and states does the business operate in?
-
-### 2️⃣ Order Trends & Seasonality
-
-↠ Is there a year-on-year growth trend in orders?
-
-↠ Do orders show monthly seasonality?
-
-↠ What time of day do customers place most orders?
-
-### 3️⃣ Regional (State-wise) Analysis
-
-↠  How do orders evolve month-on-month across states?
-
-↠ How are customers distributed across states?
-
-↠ Which states are dominant vs under-penetrated?
-
-### 4️⃣ Revenue & Cost Analysis
-
-↠ How much did order value grow from 2017 → 2018?
-
-↠ What is the total & average order price per state?
-
-↠ How does freight cost vary across states?
-
-### 5️⃣ Logistics & Delivery Performance
-
-↠ What is the actual delivery time per order?
-
-↠ Which states have late or early deliveries?
-
-↠ Which states have the fastest vs slowest delivery times?
-
-### 6️⃣ Payment Behavior
-
-↠ How do payment modes change month-on-month?
-
-↠ What payment types dominate (credit card, UPI, etc.)?
-
-↠ How many customers prefer installments vs full payment?
-
-##  SQL Concepts & Techniques Used
-
-This project demonstrates intermediate to advanced SQL skills, including:
-
-→ INNER JOIN, multi-table joins
-
-→ CTE (WITH clause)
-
-→ Window functions: LAG(), ROW_NUMBER()
-
-→ Date functions: EXTRACT(), DATE_DIFF()
-
-→ Conditional logic using CASE WHEN
-
-→ Aggregations: COUNT, SUM, AVG
-
-→ Sorting & filtering for business insights
-
-## Key Insights (Highlights)
-
-→ Orders grew exponentially in 2017, followed by sustained growth in 2018
-
-→ Clear monthly seasonality, with peaks around Oct–Nov
-
-→ Afternoon (13–18 hrs) is the most active order placement window
-
-→ States like SP, RJ, MG dominate orders and revenue
-
-→ Several states show logistics inefficiencies with high freight or delivery delays
-
-→ Credit cards dominate payments, while UPI shows consistent adoption
-
-→ Most customers prefer full payment or short EMIs (1–2 installments)
-
-## 📁 Repository Structure
-
-```text
+### Repository Structure
 target-business-case-sql-analysis/
 │
-├── data/        # Raw CSV datasets used for analysis
-├── sql/         # All SQL scripts (EDA, trends, revenue, logistics, payments)
-├── insights/    # Business insights and written interpretations
-├── visuals/     # Charts or screenshots used for reporting
-└── README.md    # Project documentation
-```
+├── sql/
+│   ├── 00_project_execution_guide.sql
+│   ├── 01_schema_and_data_overview.sql
+│   ├── 02_orders_time_trend_analysis.sql
+│   ├── 03_geographical_analysis.sql
+│   ├── 04_revenue_and_freight_analysis.sql
+│   ├── 05_delivery_performance_analysis.sql
+│   └── 06_payment_behavior_analysis.sql
+│
+├── insights/
+│   ├── 01_schema_and_data_overview.md
+│   ├── 02_orders_time_trend_analysis.md
+│   ├── 03_geographical_analysis.md
+│   ├── 04_revenue_and_freight_analysis.md
+│   ├── 05_delivery_performance_analysis.md
+│   └── 06_payment_behavior_analysis.md
+│
+├── data/
+├── visuals/
+└── README.md
 
-## How to Use This Project
+### Key Insights (Executive Summary)
 
-→ Import the CSV files into MySQL / PostgreSQL
+#### Order Growth & Seasonality
 
-→ Create tables using the provided schema
+- Orders increased sharply after 2016, indicating rapid platform adoption.
 
-→ Execute SQL scripts section-wise
+- Monthly order volumes show clear seasonality, with consistent peaks and dips.
 
-→ Review query outputs and insights
+#### Geographical Concentration
 
-→ Use insights for business storytelling or interviews
+- Customer and order volumes are heavily concentrated in states such as SP, RJ, and MG.
 
-## Future Enhancements
+- Several states remain under-penetrated, presenting growth opportunities.
 
-→ Add indexes to optimize query performance
+#### Revenue & Freight
 
-→ Convert analysis into Power BI / Tableau dashboards
+- SP alone generates over R$5.2M in revenue despite low average item prices.
 
-→ Add customer cohort & RFM analysis
+- Remote states incur freight costs exceeding 24–28% of revenue, versus 13–17% in major states.
 
-→ Perform churn and repeat-purchase analysis
+This highlights a strong logistics cost imbalance across regions.
 
-→ Write a business case presentation (PPT) for stakeholders
+#### Delivery Performance
+
+- Delivery times range from 1 day to over 200 days in extreme cases.
+
+- Some orders arrived 147 days earlier than estimated, while others were 188 days late.
+
+- Northern states face persistent delays; southeastern states benefit from faster delivery and infrastructure.
+
+#### Payment Behavior
+
+- Credit cards dominate with over 76K orders.
+
+- UPI is a strong second (~20K orders), indicating growing digital adoption.
+
+- Most customers prefer single or short-term installments, with notable spikes at 8 and 10 EMIs.
+
+📌 Business Recommendations:
+
+↠ Prioritize logistics efficiency and customer retention in high-revenue states.
+
+↠ Recalibrate delivery estimate models using historical state-level performance.
+
+↠ Optimize freight costs in remote regions via regional warehouses or local partners.
+
+↠ Strengthen UPI adoption through targeted incentives and smoother checkout.
+
+↠ Promote popular EMI plans strategically without expanding long-term credit risk.
+
+### How to Use This Project
+
+↠ Load CSV data into MySQL
+
+↠ Follow execution order from:
+
+sql/00_project_execution_guide.sql
+
+
+↠ Run each analysis file sequentially
+
+↠ Refer to corresponding insights files for interpretations
 
 👤 Author
 
 Karan Agarwal
-
 Aspiring Data Analyst / Data Scientist
-
-Skilled in SQL, Python, Data Analysis & Business Problem-Solving
+Skills: SQL, Python, Data Analysis, Business Analytics
 
 https://www.linkedin.com/in/karan-agarwal-jain94    
