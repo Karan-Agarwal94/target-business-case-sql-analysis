@@ -1,4 +1,0 @@
--- Target Business Case Study
--- Database: MySQL
--- Author: Karan Agarwal
--- Description: This file will contain all analysis queries step-by-step
