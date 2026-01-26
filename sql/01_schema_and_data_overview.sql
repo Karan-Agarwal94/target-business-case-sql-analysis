@@ -64,4 +64,4 @@ SELECT
     MIN(freight_value) AS min_freight,
     MAX(freight_value) AS max_freight
 FROM order_items;
-
+-- End of Schema and Data Overview
