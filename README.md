@@ -1,155 +1,185 @@
-# Target Business Case – SQL Analysis
+# Target Business Case – SQL, Excel & Power BI Analysis
 
-### Project Overview
+## Project Overview
 
-- This project presents an end-to-end SQL-based business analysis of a Brazilian e-commerce platform, covering over 99K orders across 27 states.
+This project presents an end-to-end data analysis of a Brazilian e-commerce platform, covering ~99K orders across 27 states, using SQL, Excel, and Power BI.
 
-- The objective is not just to analyze data, but to translate SQL insights into meaningful business decisions around growth, logistics, revenue efficiency, and customer payment behavior.
+The objective is not just to analyze data, but to translate raw transactional data into actionable business insights related to:
 
-- All analysis was executed using MySQL, with each analytical theme modularized into separate SQL and insight files.
+- Order growth & seasonality
 
-### Business Objective
+- Regional revenue concentration
 
-The primary goals of this analysis are to:
+- Delivery performance & logistics efficiency
+
+- Customer payment behavior
+
+The analysis follows a complete analytics pipeline:
+MySQL → Excel Aggregations → Power BI Dashboard.
+
+## 🎯 Business Objectives
+
+The key goals of this analysis are to:
 
 - Understand order growth patterns and seasonality
 
-- Identify geographical concentration of customers, revenue, and logistics costs
+- Identify geographical concentration of customers and revenue
 
-- Evaluate delivery performance and reliability
+- Evaluate delivery performance and delays across states
 
 - Analyze payment method preferences and installment behavior
 
-- Derive actionable business recommendations backed by data
+- Build an interactive dashboard for business stakeholders
 
-### Dataset Information
+## Dataset Information
 
-- **Domain:** E-commerce (Brazil)
+**Domain**: Brazilian E-commerce
 
-- **Time Period:** September 2016 – October 2018
+**Time Period**: September 2016 – October 2018
 
-- **Orders:** ~99,441
+**Orders**: ~99,441
 
-- **Geographic Coverage:** 4,119 cities across 27 states
+**Geographic Coverage**: 4,119 cities across 27 states
 
-- **Core Tables Used:**
+**Core Tables Used** :
 
-  - customers
-  - orders
-  - order_items
-  - payments
-  - products
-  - sellers
+- customers
+
+- orders
+
+- order_items
+
+- payments
+
+- products
+
+- sellers
+
+⚠️ Raw data is intentionally excluded from the repository and ignored via .gitignore.
+
+## Tools & Technologies
+
+**Database**: MySQL
+
+**Querying & Analysis** : SQL
+
+**Data Aggregation**: Microsoft Excel
+
+**Data Visualization**: Power BI
+
+**Version Control**: Git & GitHub
+
+**Key SQL Techniques Used** :
+
+- Multi-table joins
+
+- Window functions
+
+- Date & time analysis
+
+- Aggregations & grouping
+
+- Data validation & sanity checks
+
+## Power BI Dashboard Overview
+
+The final insights are presented through an interactive Power BI dashboard combining KPIs, trends, regional analysis, and payment behavior.
+
+**Dashboard Preview** :
+
+- 🔹 Overall Dashboard
+
+- 🔹 State-wise Interaction (Example: Sao Paulo (SP))
+
+- 🔹 Year-wise Trend Analysis (Example: 2017)
+
+## Key Insights:
+
+### Order Growth & Seasonality
+
+- Strong platform growth observed post-2016.
+
+- Clear monthly seasonality with recurring peaks and dips.
+
+- 2017 shows the most stable and accelerated growth pattern.
+
+### Geographical Concentration
+
+- Revenue and order volume are heavily concentrated in SP, RJ, and MG.
+
+- Sao Paulo alone contributes ~45% of total revenue.
+
+- Several states remain under-penetrated, indicating growth opportunities.
+
+### Revenue & Logistics
+
+- SP generates over R$5.9M in revenue despite lower average item value.
+
+- Remote states incur freight costs as high as 24–28% of revenue, compared to 13–17% in major states.
+
+- Logistics efficiency is highly uneven across regions.
+
+### Delivery Performance
+
+- ~91.9% of orders are delivered on time.
+
+- Delivery delays are more frequent in northern and remote states.
+
+- Significant variance between estimated vs actual delivery timelines exists.
+
+### Payment Behavior
+
+- Credit Cards dominate (~74%), followed by UPI (~19%).
+
+- Most customers prefer short-term or single-installment payments.
+
+- EMI spikes observed at 8 and 10 installments, indicating popular financing thresholds.
+
+## Business Recommendations
+
+- Prioritize logistics optimization and customer retention in top-revenue states.
+
+- Recalibrate delivery estimate models using historical, state-level performance.
+
+- Reduce freight burden in remote states via regional warehouses or local partners.
+
+- Strengthen UPI adoption with targeted offers and smoother checkout experience.
+
+- Promote popular EMI options strategically without increasing long-term credit risk.
 
 
-### Database & Tooling
-
-- **Database:** MySQL
-
-- **Query Style:** Modular SQL files
-
-- **Key Techniques Used:**
-
-  - Multi-table joins
-  - Window functions
-  - Date & time analysis
-  - Aggregations & grouping
-  - Data validation & sanity checks
-
-### Repository Structure
-
-```text
+## 📁 Repository Structure
+``` text
 target-business-case-sql-analysis/
 │
-├── sql/
-│   ├── 00_project_execution_guide.sql
-│   ├── 01_schema_and_data_overview.sql
-│   ├── 02_orders_time_trend_analysis.sql
-│   ├── 03_geographical_analysis.sql
-│   ├── 04_revenue_and_freight_analysis.sql
-│   ├── 05_delivery_performance_analysis.sql
-│   └── 06_payment_behavior_analysis.sql
-│
-├── insights/
-│   ├── 01_schema_and_data_overview.md
-│   ├── 02_orders_time_trend_analysis.md
-│   ├── 03_geographical_analysis.md
-│   ├── 04_revenue_and_freight_analysis.md
-│   ├── 05_delivery_performance_analysis.md
-│   └── 06_payment_behavior_analysis.md
-│
-├── data/
-├── visuals/
+├── sql/              # Modular SQL analysis files
+├── insights/         # Written business interpretations
+├── data_exports/     # Excel aggregated outputs used in Power BI 
+├── images/           # Dashboard and Excel charts screenshots (.png file)
+├── power_bi/         # Power BI (.pbix file)
+├── .gitignore
 └── README.md
 ```
 
-### Key Insights (Executive Summary)
+## How to Use This Project
 
-#### Order Growth & Seasonality
+- Load the dataset into MySQL
 
-- Orders increased sharply after 2016, indicating rapid platform adoption.
+- Follow the execution order in sql/00_project_execution_guide.sql
 
-- Monthly order volumes show clear seasonality, with consistent peaks and dips.
+- Run analysis files sequentially
 
-#### Geographical Concentration
+- Review insights in the insights/ folder
 
-- Customer and order volumes are heavily concentrated in states such as SP, RJ, and MG.
+- Explore the Power BI dashboard for interactive analysis
 
-- Several states remain under-penetrated, presenting growth opportunities.
+## 👤 Author
 
-#### Revenue & Freight
+***Karan Agarwal***
 
-- SP alone generates over R$5.2M in revenue despite low average item prices.
+Aspiring Data Analyst / Data Scientist
 
-- Remote states incur freight costs exceeding 24–28% of revenue, versus 13–17% in major states.
+**Skills**: SQL, Excel, Power BI, Data Analysis, Business Analytics
 
-- This highlights a strong logistics cost imbalance across regions.
-
-#### Delivery Performance
-
-- Delivery times range from 1 day to over 200 days in extreme cases.
-
-- Some orders arrived 147 days earlier than estimated, while others were 188 days late.
-
-- Northern states face persistent delays; southeastern states benefit from faster delivery and infrastructure.
-
-#### Payment Behavior
-
-- Credit cards dominate with over 76K orders.
-
-- UPI is a strong second (~20K orders), indicating growing digital adoption.
-
-- Most customers prefer single or short-term installments, with notable spikes at 8 and 10 EMIs.
-
-### 📌 Business Recommendations:
-
-↠ Prioritize logistics efficiency and customer retention in high-revenue states.
-
-↠ Recalibrate delivery estimate models using historical state-level performance.
-
-↠ Optimize freight costs in remote regions via regional warehouses or local partners.
-
-↠ Strengthen UPI adoption through targeted incentives and smoother checkout.
-
-↠ Promote popular EMI plans strategically without expanding long-term credit risk.
-
-### How to Use This Project
-
-1. Load CSV data into MySQL
-
-2. Follow execution order from:
-***sql/00_project_execution_guide.sql***
-
-3. Run each analysis file sequentially
-
-4. Refer to corresponding insights files for interpretations
-
-### 👤 Author
-
-**Karan Agarwal**
-
-Aspiring Data Analyst / Data Scientist  
-
-**Skills:** SQL, Python, Data Analysis, Business Analytics  
-
-🔗 LinkedIn: https://www.linkedin.com/in/karan-agarwal-jain94   
+🔗 LinkedIn:
+https://www.linkedin.com/in/karan-agarwal-jain94
